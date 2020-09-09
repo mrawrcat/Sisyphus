@@ -9,7 +9,7 @@ public class Mover : MonoBehaviour
     public float speed;
     public float time_to_stomp;
     public float time_to_stomp_time;
-    public Transform currentpoint;
+    private Transform currentpoint;
     public Transform[] points;
     public int pointselection;
 
