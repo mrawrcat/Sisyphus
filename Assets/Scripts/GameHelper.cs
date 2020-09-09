@@ -10,7 +10,7 @@ public class GameHelper : MonoBehaviour
     public GameObject[] start_tilemaps;
     public Transform player;
     public Transform boulder;
-
+    public Text distance;
     private ObjectPoolNS pool;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,7 @@ public class GameHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        distance.text = GameManager.manager.distance_moved.ToString("F0");
         if (GameManager.manager.isUnder)
         {
             Move_Continue();
@@ -68,7 +69,7 @@ public class GameHelper : MonoBehaviour
         boulder.GetComponent<Rock>().Reset_Boulder();
         GameManager.manager.pushed_rock_timer = 0;
         GameManager.manager.pushing_time = 3;
-
+        GameManager.manager.distance_moved = 0;
         pool.tileheight = 15;
         //player_death.InstantMove();
         

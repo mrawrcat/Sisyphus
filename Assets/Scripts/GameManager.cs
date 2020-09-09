@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool bossBattle;
     public float turn_tilemap_off;
     public bool spawned_checkpoint;
-
+    public float distance_moved;
 
 
     [Header("Game/Player Status")]
@@ -45,6 +45,21 @@ public class GameManager : MonoBehaviour
         else
         {
             Tilemap_Speed = 0;
+        }
+
+        Calculate_Distance();
+
+        if(pushing_time <= 0)
+        {
+            dead = true;
+        }
+    }
+
+    private void Calculate_Distance()
+    {
+        if(!dead && started)
+        {
+            distance_moved += Tilemap_Speed * Time.deltaTime;
         }
     }
 }

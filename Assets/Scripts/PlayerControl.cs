@@ -25,13 +25,6 @@ public class PlayerControl : MonoBehaviour
             GameManager.manager.pushing_time = refresh_push;
         }
 
-        if(GameManager.manager.pushing_time < 0)//dead
-        {
-            GameManager.manager.dead = true;
-            Debug.Log("died");
-
-        }
-
         if (GameManager.manager.dead)
         {
             cap_collider.isTrigger = true;
