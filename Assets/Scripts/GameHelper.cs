@@ -22,7 +22,7 @@ public class GameHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance.text = GameManager.manager.distance_moved.ToString("F0");
+        distance.text = GameManager.manager.distance_moved.ToString("F0") + " m";
         if (GameManager.manager.isUnder)
         {
             Move_Continue();

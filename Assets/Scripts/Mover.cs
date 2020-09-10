@@ -17,7 +17,7 @@ public class Mover : MonoBehaviour
     void Start()
     {
         currentpoint = points[pointselection];
-        time_to_stomp = Random.Range(5, 20);
+        time_to_stomp = Random.Range(1, 10);
         time_to_stomp_time = time_to_stomp;
     }
 

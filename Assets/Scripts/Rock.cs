@@ -20,9 +20,6 @@ public class Rock : MonoBehaviour
         if (!touching_player)
         {
             rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
-            if (GameManager.manager.started)
-            {
-            }
         }
         else if (GameManager.manager.dead)
         {
