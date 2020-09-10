@@ -11,11 +11,7 @@ public class GameHelper : MonoBehaviour
     public Transform player;
     public Transform boulder;
     public Text distance;
-
-    //Attach an Image you want to fade in the GameObject's Inspector
-    public Image m_Image;
-    //Use this to tell if the toggle returns true or false
-    public bool m_Fading;
+    public Slider stop_counter;
 
     public Animator anim;
     private ObjectPoolNS pool;
@@ -25,11 +21,13 @@ public class GameHelper : MonoBehaviour
         //reviveButtonRect.anchoredPosition = new Vector2(0, 500);
         pool = GameObject.Find("Tilemap").GetComponent<ObjectPoolNS>();
         anim = GetComponentInParent<Animator>();
+        stop_counter.maxValue = GameManager.manager.pushing_max;
     }
 
     // Update is called once per frame
     void Update()
     {
+        stop_counter.value = GameManager.manager.pushing_time;
         distance.text = GameManager.manager.distance_moved.ToString("F0") + " m";
         if (GameManager.manager.isUnder)
         {
@@ -55,16 +53,7 @@ public class GameHelper : MonoBehaviour
         }
 
 
-        if (m_Fading == true)
-        {
-            //Fully fade in Image (1) with the duration of 1
-            m_Image.CrossFadeAlpha(1, 1.0f, false);
-        }
-        //If the toggle is false, fade out to nothing (0) the Image with a duration of 1
-        if (m_Fading == false)
-        {
-            m_Image.CrossFadeAlpha(0, 1.0f, false);
-        }
+        
     }
 
     public void Start_Game()
@@ -83,7 +72,7 @@ public class GameHelper : MonoBehaviour
         anim.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
         Restart();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
         anim.SetTrigger("End");
     }
     public void Reload_Restart()

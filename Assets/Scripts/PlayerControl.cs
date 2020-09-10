@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public float pushed_rock;
-    public float refresh_push;
+    //public float refresh_push;
     //private float pushed_rock_timer;
     private Rigidbody2D rb2d;
     private CapsuleCollider2D cap_collider;
@@ -21,14 +21,14 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && !GameManager.manager.dead)
         {
-            GameManager.manager.pushed_rock_timer = pushed_rock;
-            GameManager.manager.pushing_time = refresh_push;
+            GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
+            GameManager.manager.pushing_time = GameManager.manager.pushing_max;
         }
 
         if (Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
         {
-            GameManager.manager.pushed_rock_timer = pushed_rock;
-            GameManager.manager.pushing_time = refresh_push;
+            GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
+            GameManager.manager.pushing_time = GameManager.manager.pushing_max;
         }
 
         if (GameManager.manager.dead)

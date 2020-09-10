@@ -18,9 +18,13 @@ public class GameManager : MonoBehaviour
     public bool isUnder;
     public bool started;
 
+
+    [Header("Game/Player Health and Stuff")]
+    public float fatigue;
     public float pushed_rock;
     public float pushed_rock_timer;
-    public float pushing_time;
+    public float pushing_max; //max amt of time you can stay still
+    public float pushing_time; //when you stop pushing -> amt of time until you cant hold on to boulder anymore
     private void Awake()
     {
         if (manager == null)

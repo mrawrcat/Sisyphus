@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class Mover_Around : MonoBehaviour
 {
-
     public GameObject spiker;
     public float speed;
-    public float time_to_stomp;
-    public float time_to_stomp_time;
+    //public float time_to_stomp;
+    //public float time_to_stomp_time;
     private Transform currentpoint;
     public Transform[] points;
     public int pointselection;
@@ -17,22 +16,25 @@ public class Mover : MonoBehaviour
     void Start()
     {
         currentpoint = points[pointselection];
-        time_to_stomp = Random.Range(1, 10);
-        time_to_stomp_time = time_to_stomp;
+        //time_to_stomp = Random.Range(1, 10);
+        //time_to_stomp_time = time_to_stomp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(time_to_stomp_time > 0)
+        /*
+        if (time_to_stomp_time > 0)
         {
             time_to_stomp_time -= Time.deltaTime;
         }
 
-        if(time_to_stomp_time < 0)
+        if (time_to_stomp_time < 0)
         {
             movewall();
         }
+        */
+        movewall();
     }
 
     void movewall()
@@ -44,12 +46,12 @@ public class Mover : MonoBehaviour
             if (pointselection == points.Length)
             {
                 pointselection = 0;
-
             }
-            if(pointselection == 1)
+            if(pointselection != 1)
             {
-                time_to_stomp_time = time_to_stomp;
+                spiker.transform.Rotate(0, 0, -90);
             }
+
             currentpoint = points[pointselection];
         }
     }
