@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
                 shake.Shake();
             }
             GameManager.manager.pushing_time = 0;
+            GameManager.manager.dead = true;
         }
     }
 }

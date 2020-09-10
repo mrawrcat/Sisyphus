@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         Calculate_Distance();
 
-        if(pushing_time <= 0)
+        if(pushing_time <= 0)//didnt push for awhile
         {
             dead = true;
         }

@@ -25,6 +25,12 @@ public class PlayerControl : MonoBehaviour
             GameManager.manager.pushing_time = refresh_push;
         }
 
+        if (Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
+        {
+            GameManager.manager.pushed_rock_timer = pushed_rock;
+            GameManager.manager.pushing_time = refresh_push;
+        }
+
         if (GameManager.manager.dead)
         {
             cap_collider.isTrigger = true;
