@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float pushed_rock;
     //public float refresh_push;
     //private float pushed_rock_timer;
+    public bool pushing;
+
+    private float wait_to_recover; //time to wait until fatigue bar starts to recover
     private Rigidbody2D rb2d;
     private CapsuleCollider2D cap_collider;
     // Start is called before the first frame update
@@ -19,16 +21,36 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !GameManager.manager.dead)
+        Controls();
+
+        if(!Input.GetButtonDown("Fire1") && !Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
         {
-            GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
-            GameManager.manager.pushing_time = GameManager.manager.pushing_max;
+            pushing = false;
         }
 
-        if (Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
+
+        if (wait_to_recover > 0)
         {
-            GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
-            GameManager.manager.pushing_time = GameManager.manager.pushing_max;
+            wait_to_recover -= Time.deltaTime;
+        }
+        else if (wait_to_recover <= 0)
+        {
+            wait_to_recover = 0;
+        }
+
+        if (!GameManager.manager.dead && GameManager.manager.started && pushing && GameManager.manager.can_control)
+        {
+            if(GameManager.manager.fatigue > 0)
+            {
+                GameManager.manager.fatigue -= GameManager.manager.fatigue_drain_rate * Time.deltaTime;
+            }
+        }
+        else if (!GameManager.manager.dead && GameManager.manager.started && wait_to_recover <= 0)
+        {
+            if(GameManager.manager.fatigue < GameManager.manager.max_fatigue)
+            {
+                GameManager.manager.fatigue += GameManager.manager.fatigue_recover_multiplier * Time.deltaTime;
+            }
         }
 
         if (GameManager.manager.dead)
@@ -45,5 +67,36 @@ public class PlayerControl : MonoBehaviour
             rb2d.velocity = new Vector2(2, rb2d.velocity.y);
         }
         */
+    }
+
+
+    private void Controls()
+    {
+        if(GameManager.manager.can_control)
+        {
+            if (Input.GetButtonDown("Fire1") && !GameManager.manager.dead && GameManager.manager.can_start)
+            {
+                GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
+                GameManager.manager.pushing_time = GameManager.manager.pushing_max;
+                GameManager.manager.started = true;
+                GameManager.manager.can_start = false;
+                wait_to_recover = 1f;
+                //GameManager.manager.fatigue -= 1; //fatigue doesnt go down fast enough if i dont take some off here
+                pushing = true;
+                    
+                
+
+            }
+
+            if (Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
+            {
+                GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
+                GameManager.manager.pushing_time = GameManager.manager.pushing_max;
+                wait_to_recover = 1f;
+                pushing = true;
+                
+            }
+
+        }
     }
 }

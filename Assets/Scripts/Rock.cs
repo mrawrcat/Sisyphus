@@ -30,7 +30,7 @@ public class Rock : MonoBehaviour
         {
             if (GameManager.manager.started)
             {
-                GameManager.manager.pushing_time -= Time.deltaTime;
+                GameManager.manager.pushing_time -= GameManager.manager.pushing_drain_rate * Time.deltaTime;
             }
         }
     }

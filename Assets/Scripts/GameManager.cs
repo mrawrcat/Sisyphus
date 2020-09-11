@@ -17,14 +17,20 @@ public class GameManager : MonoBehaviour
     public bool movingReset;
     public bool isUnder;
     public bool started;
-
+    public bool can_start;
 
     [Header("Game/Player Health and Stuff")]
-    public float fatigue;
+    public float max_fatigue; //max stamina pool before stopping
+    public float fatigue; // stamina gauge before stopping
+    public float fatigue_recover_multiplier = 5; //rate that fatigue recovers
+    public float fatigue_drain_rate = 1;
     public float pushed_rock;
     public float pushed_rock_timer;
     public float pushing_max; //max amt of time you can stay still
     public float pushing_time; //when you stop pushing -> amt of time until you cant hold on to boulder anymore
+    public float pushing_drain_rate = 1; //rate that you hold
+    public bool can_control;
+
     private void Awake()
     {
         if (manager == null)
@@ -36,6 +42,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        fatigue = max_fatigue;
+        pushing_time = pushing_max;
     }
 
     // Update is called once per frame
@@ -56,6 +65,26 @@ public class GameManager : MonoBehaviour
         if(pushing_time <= 0)//didnt push for awhile
         {
             dead = true;
+        }
+
+        
+
+        
+
+        if(fatigue <= 0 && can_control)
+        {
+            can_control = false;
+        }
+        else if (!can_control && fatigue >= 2)
+        {
+            can_control = true;
+        }
+        
+
+
+        if(fatigue >= max_fatigue) //prevent fatigue being more than max fatigue
+        {
+            fatigue = max_fatigue;
         }
     }
 
