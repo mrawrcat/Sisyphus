@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour, ICollectable
 {
     public string itemID { get; set; }
-    public Transform start_pos;
+    //public Transform start_pos;
 
     // Start is called before the first frame update
     void Start()

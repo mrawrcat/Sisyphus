@@ -8,6 +8,7 @@ TagManager:
   - BacktoFront
   - Tilemap
   - Is_Under
+  - TurnObjectsOn
   layers:
   - Default
   - TransparentFX
