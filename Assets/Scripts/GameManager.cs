@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager manager;
+
+    [Header("Game/Player Stuff")]
+    public int level;
+    public float coins;
+
     public float Tilemap_Speed;
     public bool bossBattle;
     public float turn_tilemap_off;

@@ -21,7 +21,7 @@ public class GameHelper : MonoBehaviour
     {
         //reviveButtonRect.anchoredPosition = new Vector2(0, 500);
         pool = GameObject.Find("Tilemap").GetComponent<ObjectPoolNS>();
-        anim = GetComponentInParent<Animator>();
+        anim = GetComponent<Animator>();
         stop_counter.maxValue = GameManager.manager.pushing_max;
         fatigue_counter.maxValue = GameManager.manager.max_fatigue;
 
