@@ -18,6 +18,8 @@ public class Quest : MonoBehaviour
 
     public void Give_Reward()
     {
+        GameManager.manager.exp += 10;
         Debug.Log("completed quest give reward");
+
     }
 }

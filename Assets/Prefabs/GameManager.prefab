@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   coins: 0
+  max_exp: 50
+  exp: 0
   Tilemap_Speed: 10
   bossBattle: 0
   turn_tilemap_off: -65

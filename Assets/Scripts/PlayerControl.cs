@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     //public float refresh_push;
     //private float pushed_rock_timer;
     public bool pushing;
+    public bool hiding;
 
     private float wait_to_recover; //time to wait until fatigue bar starts to recover
     private Rigidbody2D rb2d;
@@ -67,6 +68,15 @@ public class PlayerControl : MonoBehaviour
             rb2d.velocity = new Vector2(2, rb2d.velocity.y);
         }
         */
+
+        if (!pushing || !GameManager.manager.can_control)
+        {
+            hiding = true;
+        }
+        else
+        {
+            hiding = false;
+        }
     }
 
 

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [Header("Game/Player Stuff")]
     public int level;
     public float coins;
+    public float max_exp;
+    public float exp;
 
     public float Tilemap_Speed;
     public bool bossBattle;
@@ -73,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
 
         
-
+        
         
 
         if(fatigue <= 0 && can_control)
@@ -91,6 +93,8 @@ public class GameManager : MonoBehaviour
         {
             fatigue = max_fatigue;
         }
+
+        Calculate_Exp();
     }
 
     private void Calculate_Distance()
@@ -98,6 +102,15 @@ public class GameManager : MonoBehaviour
         if(!dead && started)
         {
             distance_moved += Tilemap_Speed * Time.deltaTime;
+        }
+    }
+
+    public void Calculate_Exp()
+    {
+        if(exp >= max_exp)
+        {
+            exp = 0;
+            level++;
         }
     }
 }
