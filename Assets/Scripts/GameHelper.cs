@@ -11,8 +11,8 @@ public class GameHelper : MonoBehaviour
     public Transform player;
     public Transform boulder;
     public Text distance;
-    public Slider stop_counter;
     public Slider fatigue_counter;
+    public Slider stop_counter;
 
     public Animator anim;
     private ObjectPoolNS pool;
@@ -33,6 +33,12 @@ public class GameHelper : MonoBehaviour
     {
         stop_counter.value = GameManager.manager.pushing_time;
         fatigue_counter.value = GameManager.manager.fatigue;
+
+        if(fatigue_counter.value < (GameManager.manager.max_fatigue * .8f))
+        {
+            
+        }
+
         distance.text = GameManager.manager.distance_moved.ToString("F0") + " m";
         if (GameManager.manager.isUnder)
         {
@@ -101,7 +107,6 @@ public class GameHelper : MonoBehaviour
         GameManager.manager.started = false;
         player.position = new Vector2(-6, -5.5f);
         boulder.GetComponent<Rock>().Reset_Boulder();
-        GameManager.manager.pushed_rock_timer = 0;
         GameManager.manager.distance_moved = 0;
         GameManager.manager.pushing_time = GameManager.manager.pushing_max;
         GameManager.manager.fatigue = GameManager.manager.max_fatigue;

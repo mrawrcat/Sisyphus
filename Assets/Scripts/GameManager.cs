@@ -25,18 +25,19 @@ public class GameManager : MonoBehaviour
     public bool isUnder;
     public bool started;
     public bool can_start;
+    public bool toggle_invincible;
+    public float invincible;
 
     [Header("Game/Player Health and Stuff")]
     public float max_fatigue; //max stamina pool before stopping
     public float fatigue; // stamina gauge before stopping
     public float fatigue_recover_multiplier = 5; //rate that fatigue recovers
     public float fatigue_drain_rate = 1;
-    public float pushed_rock;
-    public float pushed_rock_timer;
     public float pushing_max; //max amt of time you can stay still
     public float pushing_time; //when you stop pushing -> amt of time until you cant hold on to boulder anymore
     public float pushing_drain_rate = 1; //rate that you hold
     public bool can_control;
+    public bool pushing;
 
     private void Awake()
     {
@@ -57,9 +58,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pushed_rock_timer > 0)
+        float two_thirds = max_fatigue * 0.8f;
+        if (pushing && fatigue > two_thirds && fatigue > 0 && !dead && can_control)
         {
-            pushed_rock_timer -= Time.deltaTime;
+            Tilemap_Speed = 20;
+        }
+        else if(pushing && fatigue < two_thirds && fatigue > 0 && !dead && can_control)
+        {
             Tilemap_Speed = 10;
         }
         else
@@ -74,8 +79,11 @@ public class GameManager : MonoBehaviour
             dead = true;
         }
 
-        
-        
+
+        if (dead)
+        {
+            pushing = false;
+        }
         
 
         if(fatigue <= 0 && can_control)
@@ -92,6 +100,15 @@ public class GameManager : MonoBehaviour
         if(fatigue >= max_fatigue) //prevent fatigue being more than max fatigue
         {
             fatigue = max_fatigue;
+        }
+
+        if (toggle_invincible)
+        {
+            invincible = 10;
+        }
+        else if(!toggle_invincible && invincible >= 0)
+        {
+            invincible -= Time.deltaTime;
         }
 
         Calculate_Exp();

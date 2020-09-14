@@ -40,7 +40,6 @@ public class SceneMove : MonoBehaviour
         GameManager.manager.dead = false;
         GameManager.manager.isUnder = false;
         GameManager.manager.started = false;
-        GameManager.manager.pushed_rock_timer = 0;
         GameManager.manager.distance_moved = 0;
         GameManager.manager.pushing_time = GameManager.manager.pushing_max;
         GameManager.manager.fatigue = GameManager.manager.max_fatigue;

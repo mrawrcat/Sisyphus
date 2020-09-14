@@ -15,10 +15,14 @@ public class Enemy : MonoBehaviour
         {
             if (!GameManager.manager.dead)
             {
-                shake.Shake();
+                if(GameManager.manager.invincible <= 0)
+                {
+                    shake.Shake();
+                    GameManager.manager.pushing_time = 0;
+                    GameManager.manager.dead = true;
+                }
             }
-            GameManager.manager.pushing_time = 0;
-            GameManager.manager.dead = true;
+            
         }
     }
 }

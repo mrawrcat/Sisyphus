@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     //public float refresh_push;
     //private float pushed_rock_timer;
-    public bool pushing;
+    //public bool pushing;
     public bool hiding;
 
     private float wait_to_recover; //time to wait until fatigue bar starts to recover
@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
 
         if(!Input.GetButtonDown("Fire1") && !Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
         {
-            pushing = false;
+            GameManager.manager.pushing = false;
         }
 
 
@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
             wait_to_recover = 0;
         }
 
-        if (!GameManager.manager.dead && GameManager.manager.started && pushing && GameManager.manager.can_control)
+        if (!GameManager.manager.dead && GameManager.manager.started && GameManager.manager.pushing && GameManager.manager.can_control)
         {
             if(GameManager.manager.fatigue > 0)
             {
@@ -69,7 +69,7 @@ public class PlayerControl : MonoBehaviour
         }
         */
 
-        if (!pushing || !GameManager.manager.can_control)
+        if (!GameManager.manager.pushing || !GameManager.manager.can_control)
         {
             hiding = true;
         }
@@ -86,25 +86,18 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1") && !GameManager.manager.dead && GameManager.manager.can_start)
             {
-                GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
                 GameManager.manager.pushing_time = GameManager.manager.pushing_max;
                 GameManager.manager.started = true;
                 GameManager.manager.can_start = false;
                 wait_to_recover = 1f;
-                //GameManager.manager.fatigue -= 1; //fatigue doesnt go down fast enough if i dont take some off here
-                pushing = true;
-                    
-                
-
+                GameManager.manager.pushing = true;
             }
 
             if (Input.GetButton("Fire1") && !GameManager.manager.dead && GameManager.manager.started)
             {
-                GameManager.manager.pushed_rock_timer = GameManager.manager.pushed_rock;
                 GameManager.manager.pushing_time = GameManager.manager.pushing_max;
                 wait_to_recover = 1f;
-                pushing = true;
-                
+                GameManager.manager.pushing = true;
             }
 
         }
