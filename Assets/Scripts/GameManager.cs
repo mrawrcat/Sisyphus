@@ -39,6 +39,14 @@ public class GameManager : MonoBehaviour
     public bool can_control;
     public bool pushing;
 
+    [Header("Shop Stuff")]
+    public float max_fatigue_coin_req;
+    public float fatigue_recover_coin_req;
+    public float fatigue_drain_coin_req;
+    public float max_hold_coin_req;
+    public float hold_drain_coin_req;
+
+
     private void Awake()
     {
         if (manager == null)

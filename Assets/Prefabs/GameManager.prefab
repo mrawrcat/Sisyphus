@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0ee2c205ca54941b8cc0c9c0298903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 1
   coins: 0
   max_exp: 50
   exp: 0
@@ -68,3 +68,8 @@ MonoBehaviour:
   pushing_drain_rate: 1
   can_control: 1
   pushing: 0
+  max_fatigue_coin_req: 100
+  fatigue_recover_coin_req: 100
+  fatigue_drain_coin_req: 100
+  max_hold_coin_req: 100
+  hold_drain_coin_req: 100

@@ -16,9 +16,6 @@ public class SceneMove : MonoBehaviour
         SceneManager.LoadScene(name);
         GameManager.manager.dead = false;
         GameManager.manager.isUnder = false;
-        
-       
-
     }
 
     public void move_to_title()
