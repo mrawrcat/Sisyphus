@@ -12,11 +12,12 @@ public class Title_Text_Setter : MonoBehaviour
     {
         GameManager.manager.coin_in_bank = PlayerPrefs.GetFloat("current_coins", 0);
         GameManager.manager.highest_distance_moved = PlayerPrefs.GetFloat("highest_distance", 0);
-        current_coins.text = GameManager.manager.coin_in_bank.ToString("F0") + " Coins";
-        current_highscore.text = GameManager.manager.highest_distance_moved.ToString("F0") + "M";
-
-
     }
 
-    
+    private void Update()
+    {
+        current_coins.text = GameManager.manager.coin_in_bank.ToString("F0") + " Coins";
+        current_highscore.text = GameManager.manager.highest_distance_moved.ToString("F0") + "M";
+    }
+
 }

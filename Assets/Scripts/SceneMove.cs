@@ -57,4 +57,11 @@ public class SceneMove : MonoBehaviour
         PlayerPrefs.SetFloat("fast_duration", GameManager.manager.fast_duration);
         PlayerPrefs.SetFloat("fast_duration_cost", GameManager.manager.fast_duration_coin_req);
     }
+
+    public void Clear_Save()
+    {
+        PlayerPrefs.DeleteAll();
+        GameManager.manager.coin_in_bank = 0;
+        GameManager.manager.highest_distance_moved = 0;
+    }
 }
