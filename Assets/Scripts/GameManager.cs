@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Game/Player Stuff")]
     public int level;
     public float coins;
+    public float coin_in_bank;
     public float max_exp;
     public float exp;
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public float turn_tilemap_off;
     public bool spawned_checkpoint;
     public float distance_moved;
+    public float highest_distance_moved;
 
 
     [Header("Game/Player Status")]
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
     public float hold_drain_coin_req;
     public float fast_duration_coin_req;
 
-
+    private float two_thirds;
     private void Awake()
     {
         if (manager == null)
@@ -69,7 +71,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float two_thirds = max_fatigue * fast_duration;
+        if(fast_duration > 0)
+        {
+            two_thirds = max_fatigue * fast_duration;
+        }
+        else if(fast_duration <= 0)
+        {
+            two_thirds = 1;
+        }
+
         if (pushing && fatigue > two_thirds && fatigue > 0 && !dead && can_control)
         {
             Tilemap_Speed = 20;
@@ -79,6 +89,11 @@ public class GameManager : MonoBehaviour
         {
             Tilemap_Speed = 10;
             fast = false;
+        }
+        else if (pushing && fatigue == two_thirds && fatigue > 0 && !dead && can_control)
+        {
+            Tilemap_Speed = 20;
+            fast = true;
         }
         else
         {

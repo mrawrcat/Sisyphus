@@ -11,6 +11,7 @@ public class GameHelper : MonoBehaviour
     public Transform player;
     public Transform boulder;
     public Text distance;
+    public Text coins;
     public Slider fatigue_counter;
     public Slider stop_counter;
 
@@ -22,6 +23,15 @@ public class GameHelper : MonoBehaviour
         //reviveButtonRect.anchoredPosition = new Vector2(0, 500);
         pool = GameObject.Find("Tilemap").GetComponent<ObjectPoolNS>();
         anim = GetComponent<Animator>();
+        //PlayerPrefs.GetFloat("current_coins", 0);
+        PlayerPrefs.GetFloat("max_fatigue", 0);
+        PlayerPrefs.GetFloat("fatigue_recover", 0);
+        PlayerPrefs.GetFloat("fatigue_drain", 0);
+        PlayerPrefs.GetFloat("max_hold", 0);
+        PlayerPrefs.GetFloat("hold_time_drain", 0);
+        PlayerPrefs.GetFloat("fast_duration", 0);
+
+
         stop_counter.maxValue = GameManager.manager.pushing_max;
         fatigue_counter.maxValue = GameManager.manager.max_fatigue;
 
@@ -40,6 +50,7 @@ public class GameHelper : MonoBehaviour
         }
 
         distance.text = GameManager.manager.distance_moved.ToString("F0") + " m";
+        coins.text = GameManager.manager.coins.ToString("F0") + " coins";
         if (GameManager.manager.isUnder)
         {
             Move_Continue();
@@ -107,12 +118,11 @@ public class GameHelper : MonoBehaviour
         GameManager.manager.started = false;
         player.position = new Vector2(-6, -5.5f);
         boulder.GetComponent<Rock>().Reset_Boulder();
+        GameManager.manager.coins = 0;
         GameManager.manager.distance_moved = 0;
         GameManager.manager.pushing_time = GameManager.manager.pushing_max;
         GameManager.manager.fatigue = GameManager.manager.max_fatigue;
         pool.tileheight = 15;
-        //player_death.InstantMove();
-        
 
     }
 }

@@ -70,6 +70,13 @@ public class Rock : MonoBehaviour
         if (collision.tag == "Is_Under")
         {
             GameManager.manager.isUnder = true;
+            GameManager.manager.coin_in_bank += GameManager.manager.coins;
+            PlayerPrefs.SetFloat("current_coins", GameManager.manager.coin_in_bank);
+            if (GameManager.manager.distance_moved > GameManager.manager.highest_distance_moved)
+            {
+                GameManager.manager.highest_distance_moved = GameManager.manager.distance_moved;
+                PlayerPrefs.SetFloat("highest_distance", GameManager.manager.highest_distance_moved);
+            }
         }
     }
 
