@@ -66,10 +66,13 @@ MonoBehaviour:
   pushing_max: 3
   pushing_time: 3
   pushing_drain_rate: 1
+  fast_duration: 0.9
   can_control: 1
   pushing: 0
+  fast: 0
   max_fatigue_coin_req: 100
   fatigue_recover_coin_req: 100
   fatigue_drain_coin_req: 100
   max_hold_coin_req: 100
   hold_drain_coin_req: 100
+  fast_duration_coin_req: 100

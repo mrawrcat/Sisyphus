@@ -1,49 +1,73 @@
 fileFormatVersion: 2
-guid: 6f6214821dd430043a127c565b9ccc03
+guid: b427a0e8c65c1ce4b991a285214fbff5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7480731662061895141
-    second: sisyphus placeholder_0
+      213: 3119280836475829921
+    second: sisyphus placeholder 2_0
   - first:
-      213: -7315420853809741320
-    second: sisyphus placeholder_1
+      213: -7656986077781920432
+    second: sisyphus placeholder 2_1
   - first:
-      213: 1164202857004398529
-    second: sisyphus placeholder_2
+      213: -4443371118018574750
+    second: sisyphus placeholder 2_2
   - first:
-      213: 7252244607626755584
-    second: sisyphus placeholder_3
+      213: -7280835475546880516
+    second: sisyphus placeholder 2_3
   - first:
-      213: -2643870505201308785
-    second: sisyphus placeholder_4
+      213: 6461073893975540602
+    second: sisyphus placeholder 2_4
   - first:
-      213: 6402678623373574061
-    second: sisyphus placeholder_5
+      213: -4697521111183566231
+    second: sisyphus placeholder 2_5
   - first:
-      213: -6970120334881097347
-    second: sisyphus placeholder_6
+      213: -7154682488537296103
+    second: sisyphus placeholder 2_6
   - first:
-      213: 2772691146471149934
-    second: sisyphus placeholder_7
+      213: 4051025357333022467
+    second: sisyphus placeholder 2_7
   - first:
-      213: 1059135835612924339
-    second: sisyphus placeholder_8
+      213: 8343801254649841118
+    second: sisyphus placeholder 2_8
   - first:
-      213: 1408066576761858037
-    second: sisyphus placeholder_9
+      213: -5543356657862113166
+    second: sisyphus placeholder 2_9
   - first:
-      213: -1717164568056793716
-    second: sisyphus placeholder_10
+      213: -1550906376541030070
+    second: sisyphus placeholder 2_10
   - first:
-      213: 8273857840227900540
-    second: sisyphus placeholder_11
+      213: 8456300713083145793
+    second: sisyphus placeholder 2_11
   - first:
-      213: -8375466258531780402
-    second: sisyphus placeholder_12
+      213: 7398142166132071036
+    second: sisyphus placeholder 2_12
   - first:
-      213: 7968707180976672030
-    second: sisyphus placeholder_13
+      213: -876270922171913356
+    second: sisyphus placeholder 2_13
+  - first:
+      213: 5890348090782956384
+    second: sisyphus placeholder 2_14
+  - first:
+      213: 793993143236300223
+    second: sisyphus placeholder 2_15
+  - first:
+      213: -455747286001328703
+    second: sisyphus placeholder 2_16
+  - first:
+      213: -6503142830443798487
+    second: sisyphus placeholder 2_17
+  - first:
+      213: 160768660408338754
+    second: sisyphus placeholder 2_18
+  - first:
+      213: -6684126308579864044
+    second: sisyphus placeholder 2_19
+  - first:
+      213: -572440816167909671
+    second: sisyphus placeholder 2_20
+  - first:
+      213: 5107653443712219355
+    second: sisyphus placeholder 2_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -167,7 +191,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sisyphus placeholder_0
+      name: sisyphus placeholder 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae33d4e469e94b20800000000000000
+      internalID: 3119280836475829921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05572bf0bbbecb590800000000000000
+      internalID: -7656986077781920432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266c5499289f552c0800000000000000
+      internalID: -4443371118018574750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf547f3e5b645fa90800000000000000
+      internalID: -7280835475546880516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7346fd69785aa950800000000000000
+      internalID: 6461073893975540602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a510b107d0fceb0800000000000000
+      internalID: -4697521111183566231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_6
       rect:
         serializedVersion: 2
         x: 0
@@ -181,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ed7731efc5e0d760800000000000000
-      internalID: 7480731662061895141
+      spriteID: 913d60e0f2675bc90800000000000000
+      internalID: -7154682488537296103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_1
+      name: sisyphus placeholder 2_7
       rect:
         serializedVersion: 2
         x: 16
@@ -202,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f18f220e776a7a90800000000000000
-      internalID: -7315420853809741320
+      spriteID: 3074fe76912283830800000000000000
+      internalID: 4051025357333022467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_2
+      name: sisyphus placeholder 2_8
       rect:
         serializedVersion: 2
         x: 32
@@ -223,14 +373,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c7fd3a8454182010800000000000000
-      internalID: 1164202857004398529
+      spriteID: ed5ccd3a8032bc370800000000000000
+      internalID: 8343801254649841118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_3
+      name: sisyphus placeholder 2_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27805d85d7a0213b0800000000000000
+      internalID: -5543356657862113166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_10
       rect:
         serializedVersion: 2
         x: 64
@@ -244,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00eb5ddeb0625a460800000000000000
-      internalID: 7252244607626755584
+      spriteID: a49326a1ed21a7ae0800000000000000
+      internalID: -1550906376541030070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_4
+      name: sisyphus placeholder 2_11
       rect:
         serializedVersion: 2
         x: 80
@@ -265,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8be75988c51f4bd0800000000000000
-      internalID: -2643870505201308785
+      spriteID: 14e0435f1b0da5570800000000000000
+      internalID: 8456300713083145793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_5
+      name: sisyphus placeholder 2_12
       rect:
         serializedVersion: 2
         x: 96
@@ -286,14 +457,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daf3b2df842ead850800000000000000
-      internalID: 6402678623373574061
+      spriteID: c7a14226a1b7ba660800000000000000
+      internalID: 7398142166132071036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_6
+      name: sisyphus placeholder 2_13
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b60fc2d3cd6d3f0800000000000000
+      internalID: -876270922171913356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sisyphus placeholder 2_14
       rect:
         serializedVersion: 2
         x: 0
@@ -307,14 +499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d797fa51c78254f90800000000000000
-      internalID: -6970120334881097347
+      spriteID: 06bb4825168beb150800000000000000
+      internalID: 5890348090782956384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_7
+      name: sisyphus placeholder 2_15
       rect:
         serializedVersion: 2
         x: 16
@@ -328,14 +520,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61984948e39a7620800000000000000
-      internalID: 2772691146471149934
+      spriteID: fbd02b89e84d40b00800000000000000
+      internalID: 793993143236300223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_8
+      name: sisyphus placeholder 2_16
       rect:
         serializedVersion: 2
         x: 32
@@ -349,14 +541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b948925e6ec2be00800000000000000
-      internalID: 1059135835612924339
+      spriteID: 1cdda8e024cdca9f0800000000000000
+      internalID: -455747286001328703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_9
+      name: sisyphus placeholder 2_17
       rect:
         serializedVersion: 2
         x: 48
@@ -370,14 +562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f7adff57157a8310800000000000000
-      internalID: 1408066576761858037
+      spriteID: 920e4c30d0230c5a0800000000000000
+      internalID: -6503142830443798487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_10
+      name: sisyphus placeholder 2_18
       rect:
         serializedVersion: 2
         x: 64
@@ -391,14 +583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c85761c5ce76b28e0800000000000000
-      internalID: -1717164568056793716
+      spriteID: 24987aeae3a2b3200800000000000000
+      internalID: 160768660408338754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_11
+      name: sisyphus placeholder 2_19
       rect:
         serializedVersion: 2
         x: 80
@@ -412,14 +604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c5dd07ed5a2d270800000000000000
-      internalID: 8273857840227900540
+      spriteID: 412114f49863d33a0800000000000000
+      internalID: -6684126308579864044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_12
+      name: sisyphus placeholder 2_20
       rect:
         serializedVersion: 2
         x: 96
@@ -433,14 +625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec871ff10dd54cb80800000000000000
-      internalID: -8375466258531780402
+      spriteID: 9d680615c184e08f0800000000000000
+      internalID: -572440816167909671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sisyphus placeholder_13
+      name: sisyphus placeholder 2_21
       rect:
         serializedVersion: 2
         x: 112
@@ -454,8 +646,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1d083906f8869e60800000000000000
-      internalID: 7968707180976672030
+      spriteID: bd8744cdeb702e640800000000000000
+      internalID: 5107653443712219355
       vertices: []
       indices: 
       edges: []

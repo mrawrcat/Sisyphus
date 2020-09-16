@@ -13,6 +13,7 @@ public class Shop : MonoBehaviour
     public Text fatigue_drain_rate;
     public Text max_hold_time;
     public Text hold_time_drain_rate;
+    public Text fast_duration;
 
     [Header("shop cost text")]
     public Text max_fatigue_cost;
@@ -20,6 +21,7 @@ public class Shop : MonoBehaviour
     public Text fatigue_drain_rate_cost;
     public Text max_hold_time_cost;
     public Text hold_time_drain_rate_cost;
+    public Text fast_duration_cost;
 
     // Update is called once per frame
     void Update()
@@ -36,6 +38,7 @@ public class Shop : MonoBehaviour
         fatigue_drain_rate.text = GameManager.manager.fatigue_drain_rate.ToString("F0");
         max_hold_time.text = GameManager.manager.pushing_max.ToString("F0");
         hold_time_drain_rate.text = GameManager.manager.pushing_drain_rate.ToString("F0");
+        fast_duration.text = GameManager.manager.fast_duration.ToString("F2");
 
 
         max_fatigue_cost.text = GameManager.manager.max_fatigue_coin_req.ToString("F0");
@@ -43,6 +46,7 @@ public class Shop : MonoBehaviour
         fatigue_drain_rate_cost.text = GameManager.manager.fatigue_drain_coin_req.ToString("F0");
         max_hold_time_cost.text = GameManager.manager.max_hold_coin_req.ToString("F0");
         hold_time_drain_rate_cost.text = GameManager.manager.hold_drain_coin_req.ToString("F0");
+        fast_duration_cost.text = GameManager.manager.fast_duration_coin_req.ToString("F0");
     }
 
 
@@ -89,6 +93,15 @@ public class Shop : MonoBehaviour
         {
             GameManager.manager.coins -= GameManager.manager.max_hold_coin_req;
             GameManager.manager.max_hold_coin_req += 200;
+        }
+    }
+
+    public void upgrade_fast()
+    {
+        if(GameManager.manager.coins >= GameManager.manager.fast_duration_coin_req)
+        {
+            GameManager.manager.coins -= GameManager.manager.fast_duration_coin_req;
+            GameManager.manager.fast_duration_coin_req += 200;
         }
     }
 }

@@ -36,8 +36,10 @@ public class GameManager : MonoBehaviour
     public float pushing_max; //max amt of time you can stay still
     public float pushing_time; //when you stop pushing -> amt of time until you cant hold on to boulder anymore
     public float pushing_drain_rate = 1; //rate that you hold
+    public float fast_duration = .9f;
     public bool can_control;
     public bool pushing;
+    public bool fast;
 
     [Header("Shop Stuff")]
     public float max_fatigue_coin_req;
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
     public float fatigue_drain_coin_req;
     public float max_hold_coin_req;
     public float hold_drain_coin_req;
+    public float fast_duration_coin_req;
 
 
     private void Awake()
@@ -66,18 +69,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float two_thirds = max_fatigue * 0.8f;
+        float two_thirds = max_fatigue * fast_duration;
         if (pushing && fatigue > two_thirds && fatigue > 0 && !dead && can_control)
         {
             Tilemap_Speed = 20;
+            fast = true;
         }
         else if(pushing && fatigue < two_thirds && fatigue > 0 && !dead && can_control)
         {
             Tilemap_Speed = 10;
+            fast = false;
         }
         else
         {
             Tilemap_Speed = 0;
+            fast = false;
         }
 
         Calculate_Distance();

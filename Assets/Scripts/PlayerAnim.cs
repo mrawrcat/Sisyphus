@@ -18,5 +18,6 @@ public class PlayerAnim : MonoBehaviour
         anim.SetBool("dead", GameManager.manager.dead);
         anim.SetBool("pushing", GameManager.manager.pushing);
         anim.SetBool("can_control", GameManager.manager.can_control);
+        anim.SetBool("fast", GameManager.manager.fast);
     }
 }
