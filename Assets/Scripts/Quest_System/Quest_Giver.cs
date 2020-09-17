@@ -16,6 +16,7 @@ public class Quest_Giver : MonoBehaviour
     public string quest_name_desc;
     public Text descTxt;
     public Text isQuestComplete;
+
     public RectTransform descTransform;
     public bool showedQuest = false;
     public int questNum;
@@ -23,7 +24,7 @@ public class Quest_Giver : MonoBehaviour
     {
         questNum = Random.Range(0, how_many_quests);
         Talk_to_Quest_Giver();
-        //descTransform.anchoredPosition = new Vector2(0, 300);
+        descTransform.anchoredPosition = new Vector2(0, -400);
         //showedQuest = false;
     }
 
@@ -31,6 +32,7 @@ public class Quest_Giver : MonoBehaviour
     {
         Debug.Log("always updating" + quest.GetComponent<Quest>().Quest_Description);
         quest_name_desc = Quest.Quest_Description;
+
         descTxt.text = quest_name_desc;
 
         if (!showedQuest)
@@ -82,9 +84,9 @@ public class Quest_Giver : MonoBehaviour
     }
     IEnumerator Show_Quest()
     {
-        descTransform.anchoredPosition = new Vector2(0, 300);
+        //descTransform.anchoredPosition = new Vector2(0, -300);
         yield return new WaitForSeconds(1f);
-        descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, -75), 5f * Time.deltaTime);
+        descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, -250), 5f * Time.deltaTime);
         yield return new WaitForSeconds(1f);
         showedQuest = true;
 
@@ -93,11 +95,18 @@ public class Quest_Giver : MonoBehaviour
     IEnumerator Hide_Quest()
     {
         yield return new WaitForSeconds(1f);
-        descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, 300), 5f * Time.deltaTime);
+        descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, -400), 5f * Time.deltaTime);
     }
 
     public void Move_Quest_Text()
     {
-        descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, 0), 5f * Time.deltaTime);
+        //descTransform.anchoredPosition = Vector2.Lerp(descTransform.anchoredPosition, new Vector2(0, -300), 5f * Time.deltaTime);
+        StartCoroutine(Show_Quest_Replay());
+    }
+
+    public IEnumerator Show_Quest_Replay()
+    {
+        yield return new WaitForSeconds(1f);
+        showedQuest = false;
     }
 }

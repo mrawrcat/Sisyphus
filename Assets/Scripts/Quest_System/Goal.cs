@@ -17,9 +17,9 @@ public class Goal
     }
     public void Evaluate()
     {
+        Debug.Log("quest current amt obtained" + Current_Amount);
         if (Current_Amount >= Required_Amount)
         {
-            Debug.Log("quest current amt obtained" + Current_Amount);
             Complete();
         }
     }

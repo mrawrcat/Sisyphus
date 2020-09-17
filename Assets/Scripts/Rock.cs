@@ -6,12 +6,14 @@ public class Rock : MonoBehaviour
 {
     public float speed;
     public float touch;
-    private Rigidbody2D rb2d;
     public bool touching_player;
+    private Rigidbody2D rb2d;
+    private Quest_Giver quest_giver;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        quest_giver = FindObjectOfType<Quest_Giver>();
     }
 
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class Rock : MonoBehaviour
                 GameManager.manager.highest_distance_moved = GameManager.manager.distance_moved;
                 PlayerPrefs.SetFloat("highest_distance", GameManager.manager.highest_distance_moved);
             }
+            quest_giver.Talk_to_Quest_Giver();
         }
     }
 

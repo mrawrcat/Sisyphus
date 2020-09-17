@@ -19,6 +19,7 @@ public class Quest : MonoBehaviour
     public void Give_Reward()
     {
         GameManager.manager.exp += 10;
+        GameManager.manager.coin_in_bank += 100;
         Debug.Log("completed quest give reward");
 
     }
