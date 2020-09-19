@@ -23,14 +23,23 @@ public class GameHelper : MonoBehaviour
         //reviveButtonRect.anchoredPosition = new Vector2(0, 500);
         pool = GameObject.Find("Tilemap").GetComponent<ObjectPoolNS>();
         anim = GetComponent<Animator>();
-        //PlayerPrefs.GetFloat("current_coins", 0);
-        PlayerPrefs.GetFloat("max_fatigue", 0);
-        PlayerPrefs.GetFloat("fatigue_recover", 0);
-        PlayerPrefs.GetFloat("fatigue_drain", 0);
-        PlayerPrefs.GetFloat("max_hold", 0);
-        PlayerPrefs.GetFloat("hold_time_drain", 0);
-        PlayerPrefs.GetFloat("fast_duration", 0);
 
+        /*
+        GameManager.manager.coin_in_bank = PlayerPrefs.GetFloat("current_coins", 0);
+        GameManager.manager.max_fatigue = PlayerPrefs.GetFloat("max_fatigue", 10);
+        GameManager.manager.fatigue_recover_multiplier = PlayerPrefs.GetFloat("fatigue_recover", 5);
+        GameManager.manager.fatigue_drain_rate = PlayerPrefs.GetFloat("fatigue_drain", 1);
+        GameManager.manager.pushing_max = PlayerPrefs.GetFloat("max_hold", 3);
+        GameManager.manager.pushing_drain_rate = PlayerPrefs.GetFloat("hold_time_drain", 1);
+        GameManager.manager.fast_duration = PlayerPrefs.GetFloat("fast_duration", 0.9f);
+
+        GameManager.manager.max_fatigue_coin_req = PlayerPrefs.GetFloat("max_fatigue_cost", 100);
+        GameManager.manager.fatigue_recover_coin_req = PlayerPrefs.GetFloat("fatigue_recover_cost", 100);
+        GameManager.manager.fatigue_drain_coin_req = PlayerPrefs.GetFloat("fatigue_drain_cost", 100);
+        GameManager.manager.max_hold_coin_req = PlayerPrefs.GetFloat("max_hold_cost", 100);
+        GameManager.manager.hold_drain_coin_req = PlayerPrefs.GetFloat("hold_time_drain_cost", 100);
+        GameManager.manager.fast_duration_coin_req = PlayerPrefs.GetFloat("fast_duration_cost", 100);
+        */
 
         stop_counter.maxValue = GameManager.manager.pushing_max;
         fatigue_counter.maxValue = GameManager.manager.max_fatigue;

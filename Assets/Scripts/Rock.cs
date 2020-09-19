@@ -79,7 +79,7 @@ public class Rock : MonoBehaviour
                 GameManager.manager.highest_distance_moved = GameManager.manager.distance_moved;
                 PlayerPrefs.SetFloat("highest_distance", GameManager.manager.highest_distance_moved);
             }
-            quest_giver.Talk_to_Quest_Giver();
+            //quest_giver.Talk_to_Quest_Giver();
         }
     }
 
